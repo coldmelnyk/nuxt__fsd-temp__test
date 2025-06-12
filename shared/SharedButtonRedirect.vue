@@ -1,13 +1,11 @@
 <script setup lang="ts">
   const props = defineProps<{
-    path: string;
+    onClick: () => void;
   }>();
-
-  const handleNavigate = () => navigateTo({ path: `/${props.path}` });
 </script>
 
 <template>
-  <button @click="handleNavigate">
+  <button @click="props.onClick">
     <slot />
   </button>
 </template>

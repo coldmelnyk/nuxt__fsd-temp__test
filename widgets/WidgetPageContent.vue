@@ -2,6 +2,9 @@
   defineProps<{
     pageName: string;
   }>();
+
+  const handleNavigate = (pathname: string) =>
+    navigateTo({ path: `/${pathname}` });
 </script>
 
 <template>
@@ -13,7 +16,9 @@
         <slot />
       </SharedTextTab>
 
-      <SharedButtonRedirect path="about">Go to About page</SharedButtonRedirect>
+      <SharedButtonRedirect :onClick="() => handleNavigate('about')"
+        >Go to About page
+      </SharedButtonRedirect>
     </div>
   </section>
 
@@ -25,10 +30,13 @@
         <slot />
       </SharedTextTab>
 
-      <SharedButtonRedirect path="">Go to Home page</SharedButtonRedirect>
+      <SharedButtonRedirect :onClick="() => handleNavigate('')"
+        >Go to Home page
+      </SharedButtonRedirect>
     </div>
   </section>
 </template>
+ƒ
 
 <style scoped>
   .wrapper {
