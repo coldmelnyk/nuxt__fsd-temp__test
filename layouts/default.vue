@@ -1,22 +1,12 @@
-<script setup lang="ts">
-  const route = useRoute();
-</script>
-
 <template>
-  <main
-    v-if="route.name === 'index'"
-    class="main index"
-  >
-    <slot />
-  </main>
-
-  <main
-    v-if="route.name === 'about'"
-    class="main about"
-  >
+  <main :class="['main', route.name]">
     <slot />
   </main>
 </template>
+
+<script setup lang="ts">
+  const route = useRoute();
+</script>
 
 <style scoped>
   .main {

@@ -1,11 +1,13 @@
-<script setup lang="ts">
-  const props = defineProps<{
-    onClick: () => void;
-  }>();
-</script>
-
 <template>
-  <button @click="props.onClick">
+  <button @click="onClick">
     <slot />
   </button>
 </template>
+
+<script setup lang="ts">
+  interface IProps {
+    onClick: () => void;
+  }
+
+  defineProps<IProps>();
+</script>
