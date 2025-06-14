@@ -35,7 +35,7 @@
   const handleAddTodo = () => {
     const todo = new Todo(newTodo.value);
 
-    props.todos.addTodo(todo.getTodo);
+    props.todos.addTodo(todo);
     newTodo.value = initialTodoValue();
   };
 

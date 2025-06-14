@@ -5,7 +5,8 @@
       :key="todo.id"
       :title="todo.title"
       :status="todo.status"
-      :onDelete="() => handleDeleteTodo()"
+      :onStatus="() => handleEditTodoStatus(todo)"
+      :onDelete="() => handleDeleteTodo(todo)"
       :id="todo.id"
     />
   </section>
@@ -14,6 +15,8 @@
 <script setup lang="ts">
   interface IProps {
     todos: ITodo[];
+    handleDeleteTodo: (todo: ITodo) => void;
+    handleEditTodoStatus: (todoToEdit: ITodo) => void;
   }
 
   defineProps<IProps>();

@@ -1,9 +1,10 @@
 export class Todo {
-  private _id: number = Math.random() + Math.random();
+  private _id: number;
   private _title: string;
   private _status: boolean;
 
-  constructor({ title, status }: Omit<ITodo, 'id'>) {
+  constructor({ id, title, status }: ITodo) {
+    this._id = id;
     this._title = title;
     this._status = status;
   }

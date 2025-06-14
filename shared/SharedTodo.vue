@@ -7,6 +7,7 @@
         :id="String(id)"
         type="checkbox"
         :checked="status"
+        @change="onStatus"
       />
     </div>
 
@@ -22,6 +23,7 @@
     title: string;
     status: boolean;
     onDelete: () => void;
+    onStatus: () => void;
   }
 
   defineProps<IProps>();
