@@ -1,9 +1,14 @@
 <template>
   <article class="todo">
-    <input
-      type="checkbox"
-      v-model="correctedStatus"
-    />
+    <div class="checkbox-wrapper">
+      <label :for="String(id)"> Status </label>
+
+      <input
+        :id="String(id)"
+        type="checkbox"
+        :checked="status"
+      />
+    </div>
 
     <h4>{{ title }}</h4>
 
@@ -13,14 +18,13 @@
 
 <script setup lang="ts">
   interface IProps {
+    id: number;
     title: string;
-    status: string;
+    status: boolean;
     onDelete: () => void;
   }
 
-  const props = defineProps<IProps>();
-
-  const correctedStatus = props.status === 'true';
+  defineProps<IProps>();
 </script>
 
 <style scoped>
@@ -31,5 +35,13 @@
 
     padding: 1rem;
     border: 0.2rem solid red;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 5px;
   }
 </style>

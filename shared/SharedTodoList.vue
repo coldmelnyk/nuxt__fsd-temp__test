@@ -6,6 +6,7 @@
       :title="todo.title"
       :status="todo.status"
       :onDelete="() => handleDeleteTodo()"
+      :id="todo.id"
     />
   </section>
 </template>

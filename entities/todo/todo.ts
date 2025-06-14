@@ -1,10 +1,9 @@
 export class Todo {
-  private _id: number;
+  private _id: number = Math.random() + Math.random();
   private _title: string;
-  private _status: string;
+  private _status: boolean;
 
-  constructor({ id, title, status }: ITodo) {
-    this._id = id;
+  constructor({ title, status }: Omit<ITodo, 'id'>) {
     this._title = title;
     this._status = status;
   }
@@ -13,8 +12,8 @@ export class Todo {
     return { id: this._id, title: this._title, status: this._status };
   }
 
-  set setStatus(status: string) {
-    if (this._status !== status && this._status.length) {
+  set setStatus(status: boolean) {
+    if (this._status !== status) {
       this._status = status;
     }
   }

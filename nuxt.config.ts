@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     dirs: [
       'shared/utils',
       'shared/types',
-      'entities/todos'
+      'entities/todos',
+      'entities/todo'
       // You can specify here any folder from which you want to auto-import
     ]
   },
