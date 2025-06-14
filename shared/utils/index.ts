@@ -1,1 +1,1 @@
-export * from './handleNavigate';
+export * from './handleDeleteTodo';
